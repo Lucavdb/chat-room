@@ -1,7 +1,8 @@
 .message-list-container {
     margin-bottom: 16px;
     flex: 1;
-    overflow: scroll;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .message-list {

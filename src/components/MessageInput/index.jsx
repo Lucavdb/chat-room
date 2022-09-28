@@ -4,14 +4,16 @@ import { sendMessage } from '../../services/firebase';
 import './styles.css';
 import InputEmoji from 'react-input-emoji'
 
+
 function MessageInput({ roomId }) {
     const { user } = useAuth();
     const [value, setValue] = React.useState('');
 
 
-    const handleChange = (event) => {
-        setValue(event.target.value);
+    const handleChange = (value) => {
+        setValue(value);
     };
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -26,7 +28,7 @@ function MessageInput({ roomId }) {
                 type="text"
                 placeholder="Enter a message"
                 value={value}
-                // onChange={handleChange}
+                onChange={handleChange}
                 cleanOnEnter
                 // onEnter={handleOnEnter}
                 className="message-input"
